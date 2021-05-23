@@ -1,0 +1,29 @@
+/* .dropDown{
+    display: inline-flex;
+} */
+.allCat{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+    cursor: pointer !important;
+    margin-left: 100px !important;
+}
+
+#downIcon{
+    margin-left: 5px;
+    margin-top: 3px;
+}
+#heading{
+    font-size: 16px;
+    font-weight: bold;
+}
+.menu{
+    display: none;
+}
+.allCat:hover .menu{
+    display: block !important;
+    position: absolute;
+    top: 40px;
+    left: 100px;
+}

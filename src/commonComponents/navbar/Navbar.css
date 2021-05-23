@@ -1,0 +1,26 @@
+.navBar{
+    background-color: white  !important;
+    color: black !important;
+    height: 40px !important;
+    top: 63px !important;
+    box-shadow: none !important;
+}
+.navSection{
+    margin-bottom: -25px !important;
+}
+.navbarSection{
+    display: inline-flex;
+}
+.navList{
+    list-style: none;
+    display: inline-flex;
+}
+.navList li{
+    margin-top: -5px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+.link{
+    text-decoration: none !important;
+    color: black !important;
+}
