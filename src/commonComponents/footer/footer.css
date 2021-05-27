@@ -1,0 +1,27 @@
+.footerSection{
+    background-color: rgb(0, 72, 137);
+    padding: 10px;
+}
+.footerData{
+    display: inline-flex !important;
+    color: white !important;
+}
+.footerLists{
+    list-style-type: none;
+}
+.footerText{
+    font-size: 13px;
+}
+.followSection{
+    text-align: center;
+    color: white;
+}
+.follwerImages{
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+.copyrightSection{
+    text-align: center;
+}

@@ -5,6 +5,7 @@ import Homepage from './modules/homePage/homepage';
 import Electronics from './modules/electronics/electronics';
 import Jewelery from './modules/jewelery/jewelery';
 import MensClothing from './modules/mensClothing/mensClothing';
+import WoMensClothing from './modules/womensClothing/womensClothing';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -18,6 +19,7 @@ import Blog from './modules/blogs/blog';
 import TermsConditions from './modules/termsConditions/termsConditions';
 import PrivacyPolicy from './modules/privacyPolicy/privacyPolicy';
 import DetailsPage from './modules/homePage/productsPage/productDetailsPage';
+import Footer from './commonComponents/footer/footer';
 function App() {
   
 return (
@@ -53,10 +55,14 @@ return (
         <Route  path='/mens-clothing'>
           <MensClothing /> 
         </Route>
+        <Route  path='/womens-clothing'>
+          <WoMensClothing /> 
+        </Route>
         <Route  path='/products/:productId'>
           <DetailsPage /> 
         </Route>
         </Switch>
+        <Footer />
      </Router>
     </div>
   );

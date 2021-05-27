@@ -208,6 +208,38 @@ export default function PrimarySearchAppBar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const navList=[
+    {
+    title:'Home',
+    icon:<img src="https://img.icons8.com/color/35/000000/home-page.png"/>,
+    link:'/',
+  },
+  {
+    title:'About',
+    icon:<img src="https://img.icons8.com/color/35/000000/about.png"/>,
+    link:'/about',
+  },
+  {
+    title:'Contact Us',
+    icon:<img src="https://img.icons8.com/color/35/000000/add-contact-to-company.png"/>,
+    link:'/contact',
+  },
+  {
+    title:'Blogs',
+    icon:<img src="https://img.icons8.com/color/35/000000/bebo.png"/>,
+    link:'/blogs',
+  },
+  {
+    title:'Terms & Conditions',
+    icon:<img src="https://img.icons8.com/color/35/000000/terms-and-conditions.png"/>,
+    link:'/terms-conditions',
+  },
+  {
+    title:'Privacy Policy',
+    icon:<img src="https://img.icons8.com/color/35/000000/policy-document.png"/>,
+    link:'/privacy-policy',
+  },
+]
   const[categories,setCategories]=useState([
     {
       title:'Electronics',
@@ -237,7 +269,7 @@ export default function PrimarySearchAppBar() {
       <AppBar className={classes.appBar} color='secondry' position="fixed">
       <Container>
         <Toolbar>
-        {/* <Hidden mdUp> */}
+        <Hidden mdUp>
           <IconButton
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
@@ -247,7 +279,7 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          {/* </Hidden> */}
+          </Hidden>
           <Typography className={classes.title}  noWrap>
             <img src={logo} alt="" className={classes.logo} />
           </Typography>
@@ -329,7 +361,7 @@ export default function PrimarySearchAppBar() {
         </List>
         <Divider />
         <List>
-          {categories.map((item) => (
+          {navList.map((item) => (
             <Link className='link' to={item.link}>
             <ListItem onClick={handleDrawerClose} button key={item}>
               <ListItemIcon>{item.icon}</ListItemIcon>
@@ -339,14 +371,6 @@ export default function PrimarySearchAppBar() {
           ))}
         </List>
         <Divider/>
-        <div className={classes.drawerHeader}>
-        <Typography  noWrap>
-            <img src={logo} alt="" className={classes.logo} />
-          </Typography>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
       </Drawer>
       {renderMobileMenu}
       {renderMenu}

@@ -85,8 +85,8 @@ const useStyles = makeStyles((theme) => ({
         width: '50%',
         height: '50%',
         "@media (max-width: 568px)": {
-            width: '80%',
-            height: '60%',
+            width: '90%',
+            height: '45%',
         },
     },
     price: {
@@ -106,9 +106,6 @@ const useStyles = makeStyles((theme) => ({
             
         }
       },
-      btn:{
-          border:'none'
-      }
 
 }));
 
@@ -117,7 +114,6 @@ export default function SpacingGrid() {
     const [visible, setVisible] = useState(10);
     const classes = useStyles();
     const [products, loading] = FetchApis();
-    // console.log("deatils",details);
     const handleChange = (event) => {
         setSpacing(Number(event.target.value));
     };
@@ -137,7 +133,6 @@ export default function SpacingGrid() {
                                 return (
                                     <Grid className={classes.card} key={product} item lg={3} md={3} sm={6} xs={6}>
                                     <Link className='link' to={`/products/${product.id}`}>
-                                    {/* <button onClick={()=>productDetails(product)} className={classes.btn}> */}
                                         <Paper  className={classes.paper}><img className={classes.image} src={product.image} alt="" />
                                             <p className={classes.price}>Rs. {product.price}</p>
 
@@ -158,7 +153,6 @@ export default function SpacingGrid() {
                                             </div>
 
                                         </Paper>
-                                        {/* </button> */}
                                     </Link>
 
                                     </Grid>

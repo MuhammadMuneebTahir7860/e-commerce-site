@@ -15,7 +15,7 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
-import Jewelry from './useJwelery';
+import WoMensClothing from './usewomensClothing';
 import TextEllipsis from 'react-text-ellipsis';
 import {Link} from 'react-router-dom';
 
@@ -113,7 +113,7 @@ export default function SpacingGrid() {
     const [spacing, setSpacing] = React.useState(1);
     const [visible, setVisible] = useState(10);
     const classes = useStyles();
-    const [jewelryProducts, loading] = Jewelry();
+    const [womensClothing, loading] = WoMensClothing();
     const handleChange = (event) => {
         setSpacing(Number(event.target.value));
     };
@@ -123,18 +123,18 @@ export default function SpacingGrid() {
     return (
         <div>
             <Container>
-                <h2>Jewelery</h2>
+                <h2>Women's Clothing</h2>
                 <Divider />
                 <Grid container className={classes.root} spacing={2}>
                     <Grid item xs={12} >
                         <Grid container spacing={spacing}>
                             {loading && <p className={classes.loading}>Loading....</p>}
-                            {jewelryProducts.map((jewelryProducts) => {
+                            {womensClothing.map((womensClothing) => {
                                 return (
-                                    <Grid className={classes.card} key={jewelryProducts} item lg={3} md={3} sm={6} xs={6}>
-                                    <Link className='link' to={`/products/${jewelryProducts.id}`}>
-                                        <Paper  className={classes.paper}><img className={classes.image} src={jewelryProducts.image} alt="" />
-                                            <p className={classes.price}>Rs. {jewelryProducts.price}</p>
+                                    <Grid className={classes.card} key={womensClothing} item lg={3} md={3} sm={6} xs={6}>
+                                    <Link className='link' to={`/products/${womensClothing.id}`}>
+                                        <Paper  className={classes.paper}><img className={classes.image} src={womensClothing.image} alt="" />
+                                            <p className={classes.price}>Rs. {womensClothing.price}</p>
 
                                             <div>
                                                 <TextEllipsis
@@ -143,7 +143,7 @@ export default function SpacingGrid() {
                                                     ellipsisChars={'...'}
                                                     tagClass={'className'}
                                                     debounceTimeoutOnResize={200}
-                                                    useJsOnly={true}><p>{jewelryProducts.title}</p></TextEllipsis>
+                                                    useJsOnly={true}><p>{womensClothing.title}</p></TextEllipsis>
                                                 <Rating
                                                     name="customized-empty"
                                                     defaultValue={3.5}

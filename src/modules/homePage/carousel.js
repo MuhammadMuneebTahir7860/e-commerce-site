@@ -10,6 +10,8 @@ import slider4 from '../../assets/slider4.png';
 import slider5 from '../../assets/slider5.jpg';
 import slider6 from '../../assets/slider6.jpg';
 import Container from '@material-ui/core/Container';
+import Hidden from '@material-ui/core/Hidden';
+import CardMedia from '@material-ui/core/CardMedia';
 
 
 
@@ -25,7 +27,8 @@ export default function SimpleSlider () {
     };
     return (
       <div>
-          <Container >
+        <Hidden mdDown>
+          <Container>
         <Slider {...settings}>
           <div >
             <img width='100%' src={slider1} alt=""/>
@@ -47,6 +50,10 @@ export default function SimpleSlider () {
           </div>
         </Slider>
         </Container>
+        </Hidden>
+        <Hidden lgUp>
+        <CardMedia> <img src={slider3} width='100%' alt="" /></CardMedia>
+        </Hidden>
       </div>
     );
   }
